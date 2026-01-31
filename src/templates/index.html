@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Analiz Paneli</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="panel left-panel">
+            <h2>📊 Statik Analiz & Kontrol</h2>
+            
+            <div class="control-group">
+                <label for="fileSelect">Log Dosyası Seçin:</label>
+                <select id="fileSelect">
+                    {% for file in files %}
+                    <option value="{{ file }}">{{ file }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button onclick="runStaticAnalysis()" class="btn-primary">🔍 Şimdi Analiz Et</button>
+                <a href="/api/download_csv" class="btn-secondary">💾 CSV İndir</a>
+            </div>
+            
+            <h3>Sonuçlar (Statik)</h3>
+            <div id="staticResults" class="log-window">
+                <p class="info-text">Analiz bekleniyor...</p>
+            </div>
+        </div>
+
+        <div class="panel right-panel">
+            <h2>🚨 Canlı Takip Paneli (Real-time)</h2>
+            <div class="control-group row">
+                 <span>Aktif Dosya: <strong id="activeStreamFile">-</strong></span>
+                 <button onclick="startStream()" class="btn-danger btn-sm">▶️ Yayını Başlat/Değiştir</button>
+            </div>
+           
+            <div id="liveStream" class="log-window live-window">
+                <p class="info-text">Canlı yayın başlatılmadı.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

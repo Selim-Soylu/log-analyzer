@@ -1,0 +1,5 @@
+﻿Feb 10 10:05:01 server sshd[1234]: Failed password for root from 192.168.1.10
+Feb 10 10:06:10 server systemd: error: Disk usage high
+Feb 10 10:07:20 server nginx: 127.0.0.1 - - "GET /admin HTTP/1.1" 404 562
+Feb 10 15:30:00 server: Failed password for root from 10.0.0.5
+Feb 10 15:30:00 server: Failed password for root from 10.0.0.7

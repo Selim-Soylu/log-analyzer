@@ -1,0 +1,7 @@
+﻿{
+  "rules": [
+    {"name": "SSH Failed Login", "pattern": "Failed password", "severity": "high"},
+    {"name": "System Error", "pattern": "error", "severity": "medium"},
+    {"name": "Nginx 404", "pattern": " 404 ", "severity": "low"}
+  ]
+}
